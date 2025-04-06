@@ -40,6 +40,11 @@ function saveInventoryItem( itemObj : inverntoryItem) : inverntoryItem{
     return null;
 }
 
+function updateInventoryItem(trackingNumber: string , item: Omit< Partial<inverntoryItem>, "lastname" | "password"> ){
+
+
+}
+
 let nasri = getInverntory("Nasri");
 
 let test = saveInventoryItem(
@@ -51,3 +56,7 @@ let test = saveInventoryItem(
 }
 
 )
+
+//Partial make all the property inside interface as optional
+//Omit will prevent provide value or pass lastname inside this object.
+updateInventoryItem("12334" , { firstname : "Nasri" })
